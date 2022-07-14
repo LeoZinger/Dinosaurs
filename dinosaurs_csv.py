@@ -26,9 +26,11 @@ def get_speed(dino):
 
 print(dino_stride_length)
 print(dino_leg_length)
-print("dino_type = " + str(x))
-if dino_type[x] == 'bipedal':
-    result.append([x, get_speed(x)])
+result = []
+for x in dino_type.keys():
+    print("dino_type = " + str(x))
+    if dino_type[x] == 'bipedal':
+        result.append([x, get_speed(x)])
 
 print("Dino speed from fastest to slowest - ")
 for x in sorted(result, key=lambda x:x[1], reverse=True):
